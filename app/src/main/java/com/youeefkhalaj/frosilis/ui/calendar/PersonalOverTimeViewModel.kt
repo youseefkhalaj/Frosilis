@@ -4,6 +4,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.youeefkhalaj.frosilis.data.PersonalsRepository
+import com.youeefkhalaj.frosilis.data.Shift
 import com.youeefkhalaj.frosilis.data.calendarData.di.DateModule
 import com.youeefkhalaj.frosilis.data.calendarData.pojo.CalendarModel
 import com.youeefkhalaj.frosilis.data.calendarData.pojo.MonthType
@@ -166,17 +167,26 @@ init {
 
     }
 
-
-
-
-
-
+    fun addShiftPersonal(shift: Shift) {
+        val list = createListCurrentMonth()
+        val calShift = CalculateShift(shift)
+        with(calShift) {
+            list.map {
+                it.shift = calculateDaysYear(it.iranianYear, it.iranianMonth, it.iranianDay)
+            }
+        }
+        _uiState.update {
+            it.copy(listMonthCurrent = list)
+        }
+    }
 
 
     companion object {
         private const val TIMEOUT_MILLIS = 5_000L
-    }
-    }
+      }
+}
+
+
 
 
 

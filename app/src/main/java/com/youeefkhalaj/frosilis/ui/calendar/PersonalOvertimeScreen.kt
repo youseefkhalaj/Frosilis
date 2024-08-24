@@ -9,6 +9,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -149,7 +150,7 @@ fun CalendarScreenShow(
 
        val calendarUiState by personalOverTimeViewModel.uiState.collectAsState()
         personalOverTimeViewModel.addOverTimeToListDay(personalCalendarDetailsUiState.personalDetails.horseOvertime)
-       // personalOverTimeViewModel.overTimeForCurrentMonth(personalCalendarDetailsUiState.personalDetails.horseOvertime)
+        personalOverTimeViewModel.addShiftPersonal(personalCalendarDetailsUiState.personalDetails.shift)
 
 
 
@@ -464,11 +465,11 @@ Row(
 
 @Composable
 fun CalendarItem(
-    border:BorderStroke ,
-    colorCardContainer:Color,
-    hoursOverTime: Int,
-    monthsDay: String,
-    shift: String,
+    border: BorderStroke = BorderStroke(2.dp, color = Color.DarkGray) ,
+    colorCardContainer: Color = MaterialTheme.colorScheme.inversePrimary,
+    hoursOverTime: Int = 10,
+    monthsDay: String = "10",
+    shift: String = "ص",
     modifier: Modifier = Modifier){
     var emptyDay by remember { mutableStateOf(true) }
 
@@ -484,46 +485,47 @@ fun CalendarItem(
     }
 
     Card (
-        modifier = Modifier,
         shape = RoundedCornerShape(10.dp),
         colors = CardDefaults.cardColors(containerColor = colorCardContainer),
         border = border,
-
-
+        modifier = Modifier
     ){
-        Column (modifier = modifier){
+        Box() {
+
+            Text(text = shift,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(10.dp),
+                textAlign = TextAlign.Center,
+                fontSize = 10.sp
+            )
+
+        Column (
+            modifier = modifier){
             Text(
                 text = if(monthsDay == EMPTY_DATE.toPersianNumber()) "" else monthsDay,
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(0.1.dp),
+                    .padding(.1.dp)
+                    .fillMaxWidth(),
                 textAlign = TextAlign.Center,
-                style = MaterialTheme.typography.titleMedium,
+                fontSize = 15.sp,
 
 
             )
-
-                Text(text = shift,
-                    modifier = Modifier
-                        .fillMaxWidth(),
-                    //.padding(2.dp),
-                    textAlign = TextAlign.Center,
-                    fontSize = 8.sp
-                )
 
 
             Text(
                 text = if(emptyDay) hoursOverTimeInput else "" ,
                 modifier = Modifier
-                    .fillMaxWidth()
-                    ,
+                    .fillMaxWidth(),
                 textAlign = TextAlign.Center,
-                style = MaterialTheme.typography.titleMedium,
+                fontSize = 15.sp,
 
             )
         }
 
 
+        }
 
 
     }
@@ -618,6 +620,14 @@ fun CalendarHeaderWeek( modifier: Modifier =Modifier){
 @Composable
 fun CalendarPreview(){
 //DialogGetOverTimeHours({})
+}
+
+
+
+@Preview(showBackground = true)
+@Composable
+fun CalendarItemPreview(){
+CalendarItem()
 }
 
 

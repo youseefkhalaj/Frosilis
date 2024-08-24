@@ -8,7 +8,7 @@ data class CalendarModel(
     var gDay: Int,
     val gMonth: Int,
     val gYear: Int,
-    val shift: String = "ص",
+    var shift: String = "ص",
     var overTime: Int = 0,
     var isHolidayOccasion: Boolean = false,
     var isHolidayWeek: Boolean = false,
