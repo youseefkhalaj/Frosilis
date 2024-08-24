@@ -1,0 +1,86 @@
+<resources>
+    <string name="app_name">ثبت اضافه کار</string>
+    <string name="attention">اخطار</string>
+    <string name="back_button">برگشت</string>
+    <string name="delete">حذف</string>
+    <string name="delete_question">آیا شما مطمعا از حذف پرسنل هستید؟</string>
+    <string name="no_item_description">لطفا برای اضافه کردن پرسنل رو + بزنید</string>
+    <string name="edit_item_title">ویرایش پرسنل</string>
+    <string name="personal_save_overtime_title">ثبت اضافه کار پرسنل</string>
+    <string name="item">Item</string>
+    <string name="item_detail_title">ویرایش اطلاعات پرسنل</string>
+    <string name="item_entry_title">اضافه کردن پرسنل</string>
+    <string name="item_name_req">نام و نام خانوادگی:</string>
+    <string name="item_price_req">Item Price*</string>
+    <string name="no">نه</string>
+    <string name="price">Price</string>
+    <string name="quantity_in_stock">Quantity in stock</string>
+    <string name="in_stock">%d in stock</string>
+    <string name="quantity_req">Quantity in Stock*</string>
+    <string name="save_action">ویرایش و ذخیره</string>
+    <string name="sell">Sell</string>
+    <string name="yes">بله</string>
+    <string name="required_fields">مشخصات و عکس پرسنل را وارد کنید.</string>
+    <string name="horus_month_current">   اضافه کار ثبت شده این ماه: %s:۰۰ ساعت  </string>
+    <string name="horus_add_month_current">   اضافه کار مازاد این ماه: %s:۰۰ ساعت  </string>
+    <string name="horus_holiday_month_current">   اضافه کار تعطیلی این ماه: %s:۰۰ ساعت  </string>
+    <string name="horus_tip">  %s:۰۰</string>
+    <string name="set_overTime">ثبت اضافه کار پرسنل</string>
+
+
+    //new
+
+    <string name="saturday">شنبه</string>
+    <string name="sunday">یکشنبه</string>
+    <string name="monday">دوشنبه</string>
+    <string name="tuesday">سه شنبه</string>
+    <string name="wednesdays">چهارشنبه</string>
+    <string name="thursday">پنجشنبه</string>
+    <string name="friday">جمعه</string>
+    <string name="farvardin">فروردین</string>
+    <string name="ordibehesht">اردیبهشت</string>
+    <string name="khordad">خرداد</string>
+    <string name="tir">تیر</string>
+    <string name="mordad">مرداد</string>
+    <string name="shahrivar">شهریور</string>
+    <string name="mehr">مهر</string>
+    <string name="aban">آبان</string>
+    <string name="azar">آذر</string>
+    <string name="dey">دی</string>
+    <string name="bahman">بهمن</string>
+    <string name="esfand">اسفند</string>
+    <string name="january">ژانویه</string>
+    <string name="february">فوریه</string>
+    <string name="march">مارس</string>
+    <string name="april">آوریل</string>
+    <string name="may">مه</string>
+    <string name="jun">ژوئن</string>
+    <string name="july">ژوئیه</string>
+    <string name="august">اوت</string>
+    <string name="september">سپتامبر</string>
+    <string name="october">اکتبر</string>
+    <string name="november">نوامبر</string>
+    <string name="december">دسامبر</string>
+    <string name="persian_full_date">%1s %2s %3s %4s</string>
+    <string name="gregorian_full_date">%1s %2s %3s</string>
+    <string name="events_of_this_day">مناسبت های این روز :</string>
+    <string name="set_a_work_to_do">کاری برای انجام در این روز تنظیم کنید</string>
+    <string name="google_calendar_events">رویدادهای تقویم گوگل :</string>
+    <string name="name_famile">نام و نام خانوادگی:</string>
+    <string name="edit_Personal">ویرایش پرسنل</string>
+    <string name="save_overtime">ثبت نهایی</string>
+    <string name="InterHour">ساعت: </string>
+    <string name="hours_OverTime_Input">%s:۰۰</string>
+    <string name="bottom_navigation_home">خانه</string>
+    <string name="bottom_navigation_profile">نمای کلی</string>
+    <string name="sundayy">۱شنبه</string>
+    <string name="mondayy">۲شنبه</string>
+    <string name="tuesdayy">۳شنبه</string>
+    <string name="wednesdayss">۴شنبه</string>
+    <string name="thursdayy">۵شنبه</string>              ۶
+    <string name="fridayy">جمعه</string>
+    <string name="saturdayy">شنبه</string>
+    <string name="shift">شیفت:</string>
+
+
+</resources>
