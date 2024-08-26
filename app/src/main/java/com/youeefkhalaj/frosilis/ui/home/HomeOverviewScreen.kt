@@ -273,7 +273,7 @@ fun WeekDayMonthCard(
     Card (colors = CardDefaults.cardColors(containerColor = colorCard ),
         modifier = Modifier.size(width = 20.dp, height = 50.dp)){
         Box {
-            Text(text = "A \n b",
+            Text(text = "A \n b ",
                 fontSize = 6.sp)
         Column (){
             Text(
