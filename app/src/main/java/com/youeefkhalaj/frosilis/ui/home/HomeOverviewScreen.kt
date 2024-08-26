@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.pm.ActivityInfo
 import androidx.annotation.OptIn
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -261,7 +262,8 @@ fun WeekDayMonthCard(
         5 -> R.string.saturdayy
         else -> R.string.sundayy
     }
-    var colorCard: Color
+    val colorCard: Color
+
         if (montWeek == 4) {
             colorCard = MaterialTheme.colorScheme.errorContainer
         }else if (holiday){
@@ -270,7 +272,10 @@ fun WeekDayMonthCard(
 
     Card (colors = CardDefaults.cardColors(containerColor = colorCard ),
         modifier = Modifier.size(width = 20.dp, height = 50.dp)){
-        Column (modifier = Modifier){
+        Box {
+            Text(text = "A \n b",
+                fontSize = 6.sp)
+        Column (){
             Text(
                 text = stringResource(id = weekDay),
                 textAlign = TextAlign.Center,
@@ -279,13 +284,14 @@ fun WeekDayMonthCard(
 
             )
 
+
             Text(text = montDay,
                 textAlign = TextAlign.Center,
                 fontSize = 10.sp,
                 modifier = Modifier.fillMaxWidth(),
                 )
+            }
         }
-
     }
 }
 

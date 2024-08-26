@@ -148,10 +148,13 @@ fun CalendarScreenShow(
             mutableStateOf(false)
         }
 
+
        val calendarUiState by personalOverTimeViewModel.uiState.collectAsState()
+
+
+        personalOverTimeViewModel.addShiftPersonal(personalCalendarDetailsUiState.personalDetails.shift)
         personalOverTimeViewModel.addOverTimeToListDay(personalCalendarDetailsUiState.personalDetails.horseOvertime)
         personalOverTimeViewModel.addShiftPersonal(personalCalendarDetailsUiState.personalDetails.shift)
-
 
 
 
@@ -492,7 +495,7 @@ fun CalendarItem(
     ){
         Box() {
 
-            Text(text = shift,
+            Text(text = if(monthsDay == EMPTY_DATE.toPersianNumber()) "" else shift,
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(10.dp),
@@ -522,14 +525,9 @@ fun CalendarItem(
                 fontSize = 15.sp,
 
             )
+           }
         }
-
-
-        }
-
-
     }
-
 }
 
 

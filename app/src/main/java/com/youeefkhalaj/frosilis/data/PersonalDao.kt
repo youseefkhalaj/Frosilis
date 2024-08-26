@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface PersonalDao {
-    @Query("SELECT * from personals ORDER BY name ASC")
+    @Query("SELECT * from personals ORDER BY shift ASC")
     fun getAllItems(): Flow<List<Personal>>
 
     @Query("SELECT * from personals WHERE id = :id")

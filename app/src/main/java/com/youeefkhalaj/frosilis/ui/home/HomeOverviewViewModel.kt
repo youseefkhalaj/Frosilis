@@ -48,15 +48,15 @@ class HomeOverviewViewModel(personalsRepository: PersonalsRepository) :ViewModel
 
 
     fun listOverTime(overTime: Array<Array<IntArray>>):List<Int>{
-        var toDay = false
+        var toDay1 = true
 
              listIstaticMonth.map {
-                 if (it.today == true) toDay = true
+                 if (it.today == true) toDay1 = false
                  if (it.iranianDay == EMPTY_DATE){
                      it.overTime= EMPTY_DATE
                  }else{
             val b = overTime[it.iranianYear-1400][it.iranianMonth][it.iranianDay]
-                     if (b == 0 && !toDay){
+                     if (b == 0 && toDay1){
                          it.overTime = EMPTY_OVERTIME
                      }else{
                          it.overTime= b

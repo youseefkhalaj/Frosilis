@@ -87,24 +87,30 @@ class PersonalOverTimeViewModel(
     fun addOverTimeToListDay(overTime:Array<Array<IntArray>>){
         val list = createListCurrentMonth()
         var toDay = false
+        var toDay1 = false
         var overtime: Int
-        if (list == listIstaticMonth){
+
         list.map {
             if (it.today){ toDay = true}
-            if (it.iranianDay != EMPTY_DATE) {
-                    overtime = overTime[it.iranianYear-1400][it.iranianMonth][it.iranianDay]
-                    if (overtime == 0 && !toDay){
-                        it.overTime = EMPTY_OVERTIME
-                    }else{
-                        it.overTime = overtime
+        }
+            if (toDay){
+                list.map {
+                    if (it.iranianDay != EMPTY_DATE) {
+                        if(it.today){toDay1 = true}
+                        overtime = overTime[it.iranianYear - 1400][it.iranianMonth][it.iranianDay]
+                        if (overtime == 0 && !toDay1) {
+                            it.overTime = EMPTY_OVERTIME
+                        } else {
+                            it.overTime = overtime
+                        }
+                    }
+                    _uiState.update {
+                        it.copy(
+                            listMonthCurrent = list
+                        )
                     }
                 }
-            _uiState.update {
-                it.copy(
-                    listMonthCurrent = list
-                )
-            }
-        } }else{
+         }else{
             list.map {
 
                 if (it.iranianDay != EMPTY_DATE) {
@@ -168,7 +174,7 @@ init {
     }
 
     fun addShiftPersonal(shift: Shift) {
-        val list = createListCurrentMonth()
+        val list = uiState.value.listMonthCurrent
         val calShift = CalculateShift(shift)
         with(calShift) {
             list.map {
